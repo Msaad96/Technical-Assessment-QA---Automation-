@@ -1,0 +1,24 @@
+## Task #1: UI Tests
+
+[My Store](http://automationpractice.com/index.php)
+
+Given the example website above, create a UI test automation suite using any tool of your choice to cover the following user journey:-
+
+**Scenario 1**: Users are able to search for an item using the search bar
+
+- Navigate to the homepage
+- Put any search term in the search bar
+- Validate that the results returned matches the search term
+
+**Scenario 2**: Users are able to filter search results under `Women` category by `Color` and `Category` 
+
+- Navigate to the homepage
+- Click on `Women` category
+- Select any value from the `Color` and `Category` filter item
+- Validate that the results returned matches the filter criteria
+
+**Scenario 3**: Users are able to view the details of any clothing item from the `POPULAR` section and add them to the cart
+
+- Navigate to the homepage
+- Select any item from from the `POPULAR` section and add them to the cart
+- Validate that the item has successfully been added to the cart
