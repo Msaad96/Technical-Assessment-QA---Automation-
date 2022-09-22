@@ -1,0 +1,63 @@
+//**Scenario 2:** Users are able to filter search results under Women category by Color and Category
+
+//-Navigate to the homepage
+//-Click on Women category
+//-Select any value from the Color and Category filter item
+//-Validate that the results returned matches the filter criteria
+
+//-Solution Video recording link: https://vimeo.com/752254571/a9903e8838 
+//-Test Dependency: Java + IDE + Selenium Webdriver + Browser driver + internet
+
+//Solution code: 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstScenario {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+//**Scenario 2**: Users are able to filter search results under `Women` category by `Color` and `Category` 
+
+// Navigate to the homepage
+//- Click on `Women` category
+//- Select any value from the `Color` and `Category` filter item
+//- Validate that the results returned matches the filter criteria
+
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Browserdrivers\\chromedriver.exe");
+
+ChromeDriver driver = new ChromeDriver();
+driver.get("http://automationpractice.com/index.php");
+driver.manage().window().maximize();
+
+driver.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[6]/ul/li[1]/a")).click();
+
+
+Thread.sleep(2000);
+
+
+Thread.sleep(3000);
+
+
+driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/div[2]/div[1]/form/div/div[3]/ul/li[3]/input")).click();
+Thread.sleep(3000);
+
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,600)");
+
+Thread.sleep(2000);
+js.executeScript("window.scrollBy(0,-500)");
+Thread.sleep(6000);
+
+driver.findElement(By.cssSelector("#layered_category_4")).click();
+js.executeScript("window.scrollBy(0,600)");
+
+	} }
+
+
+
