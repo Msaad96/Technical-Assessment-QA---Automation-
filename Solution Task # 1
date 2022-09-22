@@ -1,8 +1,8 @@
-## Task #1: UI Tests
+## Task #1:           UI Tests with Automation Selenium Java
 
-[My Store](http://automationpractice.com/index.php)
+Given URL[My Store]: (http://automationpractice.com/index.php)
 
-Given the example website above, create a UI test automation suite using any tool of your choice to cover the following user journey:-
+"Given the example website above, create a UI test automation suite using any tool of your choice to cover the following user journey":-
 
 **Scenario 1**: Users are able to search for an item using the search bar
 
@@ -10,15 +10,46 @@ Given the example website above, create a UI test automation suite using any too
 - Put any search term in the search bar
 - Validate that the results returned matches the search term
 
-**Scenario 2**: Users are able to filter search results under `Women` category by `Color` and `Category` 
+live Solution Video   Result:  PASS
+recording link:       https://vimeo.com/752240770/3810f9291b // please copy and past at address bar
 
-- Navigate to the homepage
-- Click on `Women` category
-- Select any value from the `Color` and `Category` filter item
-- Validate that the results returned matches the filter criteria
+Test Dependency:      Java + IDE + Selenium Webdriver + Browser driver + internet
 
-**Scenario 3**: Users are able to view the details of any clothing item from the `POPULAR` section and add them to the cart
+Test Date:            21/9/2022
 
-- Navigate to the homepage
-- Select any item from from the `POPULAR` section and add them to the cart
-- Validate that the item has successfully been added to the cart
+** JAVA CODE_S1: ** //this code is written by Saad Salahuddin 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstScenario {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+//**Scenario 1**: Users are able to search for an item using the search bar
+
+//- Navigate to the homepage
+//- Put any search term in the search bar
+//- Validate that the results returned matches the search term
+
+System.setProperty("webdriver.chrome.driver","C:\\Browserdrivers\\chromedriver.exe”);
+
+ChromeDriver driver = new ChromeDriver();
+driver.get("http://automationpractice.com/index.php");
+driver.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[2]/form/input[4]")).sendKeys("Faded");
+driver.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[2]/form/button")).click();
+
+Thread.sleep(2000);
+
+driver.manage().window().maximize();
+Thread.sleep(2000);
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,400)");
+
+
+	}
+
+}
