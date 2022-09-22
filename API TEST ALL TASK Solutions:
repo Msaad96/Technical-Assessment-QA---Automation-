@@ -1,0 +1,18 @@
+Task #2: API Tests
+
+Given the API specification documentation attached above, create an API test automation suite using any tool of your choice 
+to cover all positive and negative scenarios of the CreateBooking endpoint specified in the API documentation.
+
+TEST SCOPE:      Creates a new booking in the API
+Tool for Test:   POSTMAN
+HTTP method:     POST
+URL:             https://restful-booker.herokuapp.com/booking 
+CLONE_API        GET bookingID
+Date.            20/9/2022
+Candidate.       Muhammad Saad 
+
+SOLUTIONS:
+
+Please refere the pdf document of API which include positive and negative scenarios 
+
+
