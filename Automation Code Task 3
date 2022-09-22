@@ -1,0 +1,62 @@
+//**Scenario 3:** Users are able to view the details of any clothing item from the POPULAR section and add them to the cart
+
+//-Navigate to the homepage
+//-Select any item from from the POPULAR section and add them to the cart
+//-Validate that the item has successfully been added to the cart
+
+//Solution Video recording link: https://vimeo.com/752269140/ae9dc81467 
+//Test Dependency: Java + IDE + Selenium Webdriver + Browser driver + internet
+
+// Solution:
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstScenario {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+	//	**Scenario 3**: Users are able to view the details of any clothing item from the `POPULAR` section and add them to the cart
+
+		//- Navigate to the homepage
+		//- Select any item from from the `POPULAR` section and add them to the cart
+		//- Validate that the item has successfully been added to the cart
+
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Browserdrivers\\chromedriver.exe");
+
+ChromeDriver driver = new ChromeDriver();
+driver.get("http://automationpractice.com/index.php");
+//driver.manage().window().maximize();
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,600)");
+
+//Adding product to cart from popular products
+driver.findElement(By.xpath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[3]/div/div[2]/div[2]/a[1]/span")).click();
+Thread.sleep(6000);
+
+//closing product modal
+driver.findElement(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_product.col-xs-12.col-md-6 > span")).click();
+Thread.sleep(3000);
+
+js.executeScript("window.scrollBy(0,400)");
+driver.manage().window().maximize();
+
+//verifying that the product added to cart or not
+driver.findElement(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a > b")).click();
+Thread.sleep(6000);
+
+js.executeScript("window.scrollBy(0,400)");
+
+
+
+
+	}
+
+}
+
+
